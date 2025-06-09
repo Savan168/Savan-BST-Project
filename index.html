@@ -19,48 +19,88 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+    document.body.style.visibility = 'visible';
+
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.onkeydown = function (e) {
+        if (
+            e.keyCode == 123 ||
+            (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+            (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
+            (e.ctrlKey && e.keyCode == 85)
+        ) return false;
+    };
+    // បិទ right-click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // បិទគ្រាប់ចុចដូចជា F12, Ctrl+Shift+I, Ctrl+U
+    document.onkeydown = function (e) {
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && e.key === "I") ||
+            (e.ctrlKey && e.shiftKey && e.key === "J") ||
+            (e.ctrlKey && e.key === "U") ||
+            (e.metaKey && e.altKey && e.key === "I")
+        ) {
+            e.preventDefault();
+        }
+    };
+    // ត្រួតពិនិត្យការបើក DevTools
+    setInterval(function () {
+        if (window.outerWidth - window.innerWidth > 100 ||
+            window.outerHeight - window.innerHeight > 100) {
+            document.body.innerHTML = "សូមកុំប្រើ Developer Tools!";
+            window.location.reload();
+        }
+    }, 1000);
+    function _0x12ab(_0x1234, _0x5678) { return _0x1234 * _0x5678; }
+</script>
+
 <body>
+    <title>My Website</title>
+    <noscript>
+        <style>
+            /* បិទទាំងអស់បើ JavaScript មិនដំណើរការ */
+            body {
+                background-color: white;
+                color: white;
+                visibility: hidden;
+            }
+        </style>
+        <meta http-equiv="refresh" content="0; url=blank.html">
+    </noscript>
     <div class="container-fluid">
-        <div class="row d-flex justify-content-center px-0">
-            <div class="col-11 px-0">
-                <div class="px-0 top-row d-flex align-items-center justify-content-between p-3">
-                    <div class="col-xl-9 col-6">
-                        <a href="#" class="logo d-flex align-items-end link-underline link-underline-opacity-0">
-                            <u>
-                                <h1 class="sitename mx-2">Blogy</h1>
-                            </u><span class="fs-2">.</span>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-6">
-                        <!-- <div class="d-flex align-items-center "> -->
-                        <div class="row">
-                            <div class=" col-xl-4 col-12 social-links fs-5  position-relative">
-                                <div class="row ">
-                                    <a href="#" class="facebook col-3 nav-link"><i
-                                            class="bi bi-facebook icon-link-hover" id="hover"></i></a>
-                                    <a href="#" class="twitter col-3 nav-link"><i class="bi bi-twitter icon-link-hover"
-                                            id="hover"></i></a>
-                                    <a href="#" class="instagram col-3 nav-link"><i
-                                            class="m-end-5 bi bi-instagram icon-link-hover" id="hover"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-8 col-0">
-                                <a href="#" id="list" class=" nav-link"><i
-                                        class="bi bi-list icon-link-hover bg-secondary text-white p-1 py-0"
-                                        id="hover"></i></a>
-                                <form class="search-form ms-4 position-relative d-flex">
-                                    <input type="text" placeholder="Search..." class="form-control "
-                                        id="btn-input-search">
-                                    <button type="submit" class="btn position-absolute end-0" id="btn-input-search"><i
-                                            class="bi bi-search"></i></button>
-                                </form>
-                            </div>
+        <header class="p-4" style="background-color: #fff;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-6">
+                        <div class="logo d-flex align-items-center">
+                            <h1>Blogy</h1>
+                            <span>.</span>
                         </div>
-                        <!-- </div> -->
+                    </div>
+                    <div class="col-xl-2 col-6">
+                        <div class="contact h-100 gap-3 d-flex align-items-center justify-content-end">
+                            <i class="bi bi-facebook fs-5"></i>
+                            <i class="bi bi-twitter fs-5"></i>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="search d-flex align-items-center h-100 justify-content-end">
+                            <form class="search-form ms-4 position-relative d-flex">
+                                <input type="text" placeholder="Search..." class="form-control ">
+                                <i class="bi bi-search btn position-absolute end-0"></i>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <i class="bi bi-list menu" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="font-size: 35px; z-index: 1111;"></i>
+        </header>
         <div class="row" id="navbar">
             <div class="col-12 bg-light p-3 fs-5">
                 <nav id="navmenu" class="navmenu">
@@ -163,32 +203,38 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner" id="Featured_Posts_Slide">
-                                    <div class="carousel-item active " data-bs-interval="200">
-                                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                                        <div class="bg-success d-block h-100"></div>
+                        <!-- ============================================================================================================================================================================================================ -->
+                        <div class="col-12 " id="Featured-Post">
+                            <div class="container">
+                                <div class="row px-0">
+                                    <div class="col-xl-4 col-12">
+                                        <div class="content">
+                                            <img src="https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-portrait-2.webp"
+                                                alt="">
+                                            <div class="title">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, sunt!
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="carousel-item" data-bs-interval="200">
-                                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                                        <div class="bg-warning d-block h-100"></div>
+                                    <div class="col-xl-4 col-12">
+                                        <div class="content">
+                                            <img src="https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-portrait-4.webp"
+                                                alt="">
+                                            <div class="title">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, sunt!
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="carousel-item " data-bs-interval="200">
-                                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                                        <div class="bg-info d-block h-100"></div>
+                                    <div class="col-xl-4 col-12">
+                                        <div class="content">
+                                            <img src="https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-portrait-3.webp"
+                                                alt="">
+                                            <div class="title">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, sunt!
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -499,19 +545,22 @@
                                 </div>
                                 <div class="col-12" id="text-show-sugest">
                                     <div class="row ps-2" id="hover-box">
-                                        <div class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
+                                        <div
+                                            class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
                                             <i id="text-color" class="bi bi-check-circle-fill"></i>
                                             <h6 class="m-0">Premium Support</h6>
                                         </div>
                                     </div>
                                     <div class="row" id="hover-box">
-                                        <div class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
+                                        <div
+                                            class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
                                             <i id="text-color" class="bi bi-check-circle-fill"></i>
                                             <h6 class="m-0">Premium Support</h6>
                                         </div>
                                     </div>
                                     <div class="row" id="hover-box">
-                                        <div class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
+                                        <div
+                                            class="col-6 col-xl-12 bg-white p-2 rounded-3 d-flex gap-2 align-items-center">
                                             <i id="text-color" class="bi bi-check-circle-fill"></i>
                                             <h6 class="m-0">Premium Support</h6>
                                         </div>
@@ -778,8 +827,8 @@
                             <div class="input-group ">
                                 <input type="text" id="input" class=" form-control rounded-start-pill"
                                     placeholder="Recipient's username">
-                                <button class="btn btn-outline-secondary rounded-end-pill px-2 text-white"
-                                    type="button" id="button-Sub">Subscribe</button>
+                                <button class="btn btn-outline-secondary rounded-end-pill px-2 text-white" type="button"
+                                    id="button-Sub">Subscribe</button>
                             </div>
                         </div>
                         <div class="col-xl-5 col-12">
@@ -790,22 +839,34 @@
                 </div>
             </div>
             <!-- ============== Footer =============== -->
-             <div class="col-11" id="Footer">
+            <div class="col-11" id="Footer">
                 <div class="row h-100">
                     <div class="col-xl-4 col-12">
                         <div class="row">
                             <div class="col-12 py-4">
                                 <h2>Blogy</h2>
                             </div>
-                            <div class="col-12"><h6>A108 Adam Street</h6></div>
-                            <div class="col-12"><h6>New York, NY 535022</h6></div>
-                            <div class="col-12"><h6><b>Phone:</b> +1 5589 55488 55</h6></div>
-                            <div class="col-12"><h6><b>Email:</b> info@example.com</h6></div>
+                            <div class="col-12">
+                                <h6>A108 Adam Street</h6>
+                            </div>
+                            <div class="col-12">
+                                <h6>New York, NY 535022</h6>
+                            </div>
+                            <div class="col-12">
+                                <h6><b>Phone:</b> +1 5589 55488 55</h6>
+                            </div>
+                            <div class="col-12">
+                                <h6><b>Email:</b> info@example.com</h6>
+                            </div>
                             <div class="col-12 d-flex gap-3 py-3">
-                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i class="bi bi-twitter-x"></i></a>
-                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i
+                                        class="bi bi-facebook"></i></a>
+                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="#" class="nav-link rounded-circle" id="icon-Social"><i
+                                        class="bi bi-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -850,17 +911,17 @@
                         </ul>
                     </div>
                 </div>
-             </div>
-             <div class="col-11 d-flex justify-content-center" id="copyright">
+            </div>
+            <div class="col-11 d-flex justify-content-center" id="copyright">
                 <div class="row text-center ">
                     <div class="col-12">
                         <h6>© Copyright Blogy All Rights Reserved</h6>
                     </div>
                     <div class="col-12">
-                        <h6>Designed by <a href="#" id="text-color" >BootstrapMade</a></h6>
+                        <h6>Designed by <a href="#" id="text-color">BootstrapMade</a></h6>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
 
     </div>
