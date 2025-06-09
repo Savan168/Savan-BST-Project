@@ -1,0 +1,501 @@
+:root {
+    --main-color: #f75815;
+    --background-color: #ffffff;
+    --default-color: #212529;
+    --heading-color: #2d465e;
+    --accent-color: #f75815;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+}
+
+body {
+    overflow-x: hidden;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+#text-color {
+    color: #f75815;
+}
+
+#small-user-logo {
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =============================== Phone ====================================== */
+@media (max-width: 575px) {
+    #btn-input-search {
+        display: none;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #list {
+        display: block;
+        position: fixed;
+        right: 0;
+
+    }
+
+    #sec-1t {
+        .content {
+            margin-top: 30px;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all ease-in-out 0.4s;
+            }
+
+            .title {
+                position: absolute;
+                background: linear-gradient(0deg, color-mix(in srgb, #212529, transparent 20%)0%, transparent 100%);
+                bottom: 0px;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: sans-serif;
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+
+        .content:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    #sec-1b {
+        .content {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 17px 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all ease-in-out 0.4s;
+            }
+
+            .title {
+                z-index: 11;
+                position: absolute;
+                background: linear-gradient(0deg, color-mix(in srgb, #212529, transparent 20%)0%, transparent 100%);
+                bottom: 0px;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                font-family: sans-serif;
+                width: 100%;
+                padding-left: 1.5rem;
+            }
+        }
+
+        .content:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    #Latest_Posts {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        #post {
+            min-height: 400px;
+
+            #about-post {
+                #Profile {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    #list-post-card-f,
+    #list-post-card {
+        .row #year {
+            font-size: 12px;
+        }
+    }
+
+    #text-show-sugest {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+
+        div:nth-child(2),
+        div:nth-child(3) {
+            margin-left: 5px;
+        }
+    }
+
+    #btn-show-sugest {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #RATE {
+        height: 170px;
+        padding: 30px;
+        margin: 20px;
+    }
+
+    #Subscribe {
+        margin-top: 100px;
+        padding: 50px 10px 10px 10px;
+        width: 100%;
+        background-color: rgba(221, 235, 235, 0.529);
+
+        #Sub {
+            display: flex;
+            justify-content: space-between;
+
+            #text {
+                font-size: 40px;
+            }
+
+            h6 {
+                font-size: 20px;
+            }
+
+            div:nth-child(2) {
+                margin-top: 30px;
+            }
+        }
+
+    }
+}
+
+/* ====================================================== */
+@media (min-width: 576px) {
+    #list {
+        display: none;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    #sec-1t {
+        .content {
+            margin-top: 30px;
+            width: 100%;
+            height: 490px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all ease-in-out 0.4s;
+            }
+
+            .title {
+                position: absolute;
+                background: linear-gradient(0deg, color-mix(in srgb, #212529, transparent 20%)0%, transparent 100%);
+                bottom: 0px;
+                color: white;
+                font-size: 25px;
+                font-weight: bold;
+                font-family: sans-serif;
+                width: 100%;
+                padding: 1.5rem;
+            }
+        }
+
+        .content:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    #sec-1b {
+        .content {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all ease-in-out 0.4s;
+            }
+
+            .title {
+                z-index: 11;
+                position: absolute;
+                background: linear-gradient(0deg, color-mix(in srgb, #212529, transparent 20%)0%, transparent 100%);
+                bottom: 0px;
+                color: rgb(255, 255, 255);
+                font-size: 30px;
+                font-weight: bold;
+                font-family: sans-serif;
+                width: 100%;
+                padding-left: 1.5rem;
+            }
+        }
+
+        .content:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    #RATE {
+        height: 300px;
+    }
+
+    #Latest_Posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        #post {
+            min-height: 430px;
+
+            #about-post {
+                #Profile {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    #text-show-sugest {
+        display: flex;
+        gap: 40px;
+    }
+
+    #btn-show-sugest {
+        display: flex;
+        gap: 10px;
+    }
+
+    #Subscribe {
+        margin-top: 100px;
+        padding: 50px 90px 0 90px;
+        width: 100%;
+        background-color: rgba(221, 235, 235, 0.529);
+
+        #Sub {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+
+    #Footer {
+        margin-top: 50px;
+        border-top: 1px solid rgba(189, 189, 189, 0.667);
+        border-bottom: 1px solid rgba(189, 189, 189, 0.667);
+        padding: 40px 0;
+        font-family: sans-serif;
+        #icon-Social {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+        #icon-Social:hover {
+            border: 1px solid #f75815;
+            i {
+                color: #f75815;
+            }
+        }
+    }
+
+    #copyright {
+        margin-top: 40px;
+        font-weight: normal;
+
+    }
+}
+
+/* =================================================================== */
+#input {
+    padding: 10px 30px;
+}
+
+#button-Sub {
+    background-color: #f75815;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+#sugest {
+    background-color: rgba(248, 244, 0, 0.069);
+}
+
+#Featured_Posts_Slide {
+    height: 520px;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#sub-Category {
+    height: 160px;
+
+    img {
+        width: 110px;
+        height: 110px;
+
+    }
+
+}
+
+#list-post-card {
+    .row {
+        margin: 0 12px;
+
+        #sub-Category {
+            margin: 0 -12px;
+        }
+    }
+}
+
+/* ========= hover on box that allow you to see and check ============== */
+#text-show-sugest {
+    display: flex;
+    margin: 13px 0;
+}
+
+
+
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+
+#hover-box {
+    transition: 0.2s;
+}
+
+#hover-box:hover {
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+#hover {
+    color: var(--default-color);
+}
+
+#hover:hover {
+    color: var(--accent-color);
+    transition: 0.2s;
+}
+
+#hover-bg {
+    color: var(--accent-color);
+}
+
+#hover-bg:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+#line {
+    height: 2px;
+    background-color: red;
+}
+#card-1 {
+    background-image: url('https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-portrait-4.webp');
+}
+
+#RATE {
+    width: 100%;
+    margin-top: 50px;
+    background-image: url('https://bootstrapmade.com/content/demo/Blogy/assets/img/misc/misc-1.webp');
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+}
+
+#RATE-ANS {
+    animation: tog 6s ease-in-out infinite;
+    position: absolute;
+}
+
+@keyframes tog {
+    0% {
+        transform: translateY(-60px);
+    }
+
+    50% {
+        transform: translateY(-35px);
+    }
+
+    100% {
+        transform: translateY(-60px);
+    }
+}
+
+#Latest_Posts {
+    #post {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    #post_1 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-1.webp);
+        background-size: cover;
+    }
+
+    #post_2 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-2.webp);
+        background-size: cover;
+    }
+
+    #post_3 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-3.webp);
+        background-size: cover;
+    }
+
+    #post_4 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-4.webp);
+        background-size: cover;
+    }
+
+    #post_5 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-5.webp);
+        background-size: cover;
+    }
+
+    #post_6 {
+        background-image: url(https://bootstrapmade.com/content/demo/Blogy/assets/img/blog/blog-post-6.webp);
+        background-size: cover;
+    }
+}
+#input{
+    border: 1px solid #f75815;
+}
