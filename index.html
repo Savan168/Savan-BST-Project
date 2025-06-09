@@ -31,30 +31,7 @@
             (e.ctrlKey && e.keyCode == 85)
         ) return false;
     };
-    // បិទ right-click
-    document.addEventListener('contextmenu', e => e.preventDefault());
 
-    // បិទគ្រាប់ចុចដូចជា F12, Ctrl+Shift+I, Ctrl+U
-    document.onkeydown = function (e) {
-        if (
-            e.key === "F12" ||
-            (e.ctrlKey && e.shiftKey && e.key === "I") ||
-            (e.ctrlKey && e.shiftKey && e.key === "J") ||
-            (e.ctrlKey && e.key === "U") ||
-            (e.metaKey && e.altKey && e.key === "I")
-        ) {
-            e.preventDefault();
-        }
-    };
-    // ត្រួតពិនិត្យការបើក DevTools
-    setInterval(function () {
-        if (window.outerWidth - window.innerWidth > 100 ||
-            window.outerHeight - window.innerHeight > 100) {
-            document.body.innerHTML = "សូមកុំប្រើ Developer Tools!";
-            window.location.reload();
-        }
-    }, 1000);
-    function _0x12ab(_0x1234, _0x5678) { return _0x1234 * _0x5678; }
 </script>
 
 <body>
@@ -928,5 +905,31 @@
     </div>
 
 </body>
+<script>
+    // បិទ right-click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // បិទគ្រាប់ចុចដូចជា F12, Ctrl+Shift+I, Ctrl+U
+    document.onkeydown = function (e) {
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && e.key === "I") ||
+            (e.ctrlKey && e.shiftKey && e.key === "J") ||
+            (e.ctrlKey && e.key === "U") ||
+            (e.metaKey && e.altKey && e.key === "I")
+        ) {
+            e.preventDefault();
+        }
+    };
+    // ត្រួតពិនិត្យការបើក DevTools
+    setInterval(function () {
+        if (window.outerWidth - window.innerWidth > 100 ||
+            window.outerHeight - window.innerHeight > 100) {
+            document.body.innerHTML = "សូមកុំប្រើ Developer Tools!";
+            window.location.reload();
+        }
+    }, 1000);
+    function _0x12ab(_0x1234, _0x5678) { return _0x1234 * _0x5678; }
+</script>
 
 </html>
