@@ -38,7 +38,6 @@
     <title>My Website</title>
     <noscript>
         <style>
-            /* បិទទាំងអស់បើ JavaScript មិនដំណើរការ */
             body {
                 background-color: white;
                 color: white;
@@ -47,11 +46,11 @@
         </style>
         <meta http-equiv="refresh" content="0; url=blank.html">
     </noscript>
-    <div class="container-fluid">
-        <header class="p-4" style="background-color: #fff;">
+    <div class="container-fluid bg-light">
+        <header class="py-4 bg-white position-relative">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-7 col-6">
+                    <div class="col-xl-7 col-5">
                         <div class="logo d-flex align-items-center">
                             <h1>Blogy</h1>
                             <span>.</span>
@@ -59,57 +58,59 @@
                     </div>
                     <div class="col-xl-2 col-6">
                         <div class="contact h-100 gap-3 d-flex align-items-center justify-content-end">
-                            <i class="bi bi-facebook fs-5"></i>
-                            <i class="bi bi-twitter fs-5"></i>
-                            <i class="bi bi-instagram fs-5"></i>
+                            <i id="hover" class="bi bi-facebook fs-5"></i>
+                            <i id="hover" class="bi bi-twitter fs-5"></i>
+                            <i id="hover" class="bi bi-instagram fs-5"></i>
                         </div>
                     </div>
                     <div class="col-xl-3">
                         <div class="search d-flex align-items-center h-100 justify-content-end">
                             <form class="search-form ms-4 position-relative d-flex">
-                                <input type="text" placeholder="Search..." class="form-control ">
+                                <input type="text" placeholder="Search..." class="form-control" />
                                 <i class="bi bi-search btn position-absolute end-0"></i>
-
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <i class="bi bi-list menu" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                style="font-size: 35px; z-index: 1111;"></i>
+            <i class="bi bi-list menu d-xl-none position-fixed" id="menuToggle"
+                style="font-size: 35px; top: 20px; right:12px; z-index: 222;"></i>
         </header>
-        <div class="row" id="navbar">
-            <div class="col-12 bg-light p-3 fs-5">
-                <nav id="navmenu" class="navmenu">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#" style="color: var(--accent-color);">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">Category</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">Blog Details</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">Author Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">Pages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="hover" class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center bg-lightpx-0">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-4" id="navbarv">
+            <ul class="navbar-nav d-flex gap-2 justify-content-center w-100 p-3">
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Category</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Blog Detail</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Author Profile</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a id="hover" class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Script -->
+        <script>
+            const menuToggle = document.getElementById("menuToggle");
+            const navbar = document.getElementById("navbarv");
+
+            menuToggle.addEventListener("click", () => {
+                if (window.innerWidth < 1200) {
+                    navbar.classList.toggle("show");
+                }
+            });
+
+            // Optional: auto hide on resize to desktop
+            window.addEventListener("resize", () => {
+                if (window.innerWidth >= 1200) {
+                    navbar.classList.remove("show");
+                }
+            });
+        </script>
+        <div class="row d-flex justify-content-center bg-light px-0">
             <div class="col-11 px-0">
-                <section class="my-3">
+                <section class="my-xl-3">
                     <div class="row" id="sec-1t">
                         <div class="col-xl-8 col-12">
                             <div class="content rounded-3">

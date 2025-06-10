@@ -34,12 +34,28 @@ img {
 }
 
 /* =============================== Phone ====================================== */
-@media (max-width: 575px) {
-    #navbar {
-        display: none;
+@media (max-width: 575px) { 
+    #navbarv {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out;
     }
 
-    header {
+    #navbarv.show {
+      max-height: 500px; /* Adjust if your menu is taller */
+    }
+
+    @media (min-width: 1200px) {
+      #navbarv {
+        max-height: none !important;
+        overflow: visible;
+      }
+    }
+
+    .menu {
+      cursor: pointer;
+    }
+    header >.container>.row{
         .col-xl-3 {
             display: none;
         }
@@ -443,7 +459,7 @@ img {
     color: var(--default-color);
 }
 
-#hover:hover {
+#hover:hover, #menuToggle:hover {
     color: var(--accent-color);
     transition: 0.2s;
 }
