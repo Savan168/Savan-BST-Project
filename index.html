@@ -18,34 +18,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<script>
-    document.body.style.visibility = 'visible';
-
-    document.addEventListener("contextmenu", e => e.preventDefault());
-    document.onkeydown = function (e) {
-        if (
-            e.keyCode == 123 ||
-            (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
-            (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
-            (e.ctrlKey && e.keyCode == 85)
-        ) return false;
-    };
-
-</script>
-
 <body>
-    <title>My Website</title>
-    <noscript>
-        <style>
-            body {
-                background-color: white;
-                color: white;
-                visibility: hidden;
-            }
-        </style>
-        <meta http-equiv="refresh" content="0; url=blank.html">
-    </noscript>
     <div class="container-fluid">
         <header class="py-4 bg-white position-relative">
             <div class="container">
@@ -907,30 +880,7 @@
 
 </body>
 <script>
-    // បិទ right-click
     document.addEventListener('contextmenu', e => e.preventDefault());
-
-    // បិទគ្រាប់ចុចដូចជា F12, Ctrl+Shift+I, Ctrl+U
-    document.onkeydown = function (e) {
-        if (
-            e.key === "F12" ||
-            (e.ctrlKey && e.shiftKey && e.key === "I") ||
-            (e.ctrlKey && e.shiftKey && e.key === "J") ||
-            (e.ctrlKey && e.key === "U") ||
-            (e.metaKey && e.altKey && e.key === "I")
-        ) {
-            e.preventDefault();
-        }
-    };
-    // ត្រួតពិនិត្យការបើក DevTools
-    setInterval(function () {
-        if (window.outerWidth - window.innerWidth > 100 ||
-            window.outerHeight - window.innerHeight > 100) {
-            document.body.innerHTML = "សូមកុំប្រើ Developer Tools!";
-            window.location.reload();
-        }
-    }, 1000);
-    function _0x12ab(_0x1234, _0x5678) { return _0x1234 * _0x5678; }
 </script>
 
 </html>
